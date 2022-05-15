@@ -7,13 +7,12 @@
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
-  <!-- EXTRA CREDIT - 2 -->
+  <!-- EXTRA CREDIT - 1 -->
 
   <script type="text/babel">
     const className = 'container'
-    const children = 'Hello from props'
-    const props = {children, className}
-    const element = <div {...props} />
+    const children = 'Hello from variable'
+    const element = <div className={className}>{children}</div>
 
     ReactDOM.createRoot(document.getElementById('root')).render(element)
   </script>

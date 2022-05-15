@@ -3,31 +3,17 @@
 
 import * as React from 'react'
 
-/* EXTRA CREDIT - 3 */
-
 function UsernameForm({onSubmitUsername}) {
-  const [username, setUsername] = React.useState('')
-
-  const handleChange = event => {
-    const {value} = event.target
-    setUsername(value.toLowerCase())
-  }
-
   const handleSubmit = event => {
     event.preventDefault()
-    onSubmitUsername(username)
+    const userName = event.target.userName.value
+    onSubmitUsername(userName)
   }
-
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="userName">Username:</label>
-        <input
-          id="userName"
-          onChange={handleChange}
-          value={username}
-          type="text"
-        />
+        <input id="userName" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -38,5 +24,7 @@ function App() {
   const onSubmitUsername = username => alert(`You entered: ${username}`)
   return <UsernameForm onSubmitUsername={onSubmitUsername} />
 }
+
+// 📜 https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
 export default App

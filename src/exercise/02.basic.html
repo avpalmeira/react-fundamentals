@@ -1,8 +1,6 @@
 <!-- Intro to raw React APIs -->
 <!-- http://localhost:3000/isolated/exercise/02.html -->
 
-<!-- EXTRA CREDIT -->
-
 <body>
   <div id="root"></div>
 
@@ -12,9 +10,7 @@
   <script type="module">
     const rootElement = document.getElementById('root')
 
-    const hello = React.createElement('span', {children: 'Hello'})
-    const world = React.createElement('span', {children: 'World'})
-    const elementProps = {className: 'container', children: [hello, ' ', world]}
+    const elementProps = {className: 'container', children: 'Hello!'}
     const element = React.createElement('div', elementProps)
     const root = ReactDOM.createRoot(rootElement)
     root.render(element)

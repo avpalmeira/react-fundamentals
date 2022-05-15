@@ -6,9 +6,8 @@
   <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
-  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 
-  <!-- EXTRA CREDIT - 5 -->
+  <!-- EXTRA CREDIT - 3 -->
 
   <script type="text/babel">
     const Message = ({subject, greeting}) => {
@@ -19,16 +18,24 @@
       )
     }
 
+    const PropTypes = {
+      string(props, propName) {
+        if (typeof props[propName] !== 'string') {
+          return new Error(`${propName} should be a string`)
+        }
+      },
+    }
+
     Message.propTypes = {
-      subject: PropTypes.string.isRequired,
-      greeting: PropTypes.string.isRequired,
+      subject: PropTypes.string,
+      greeting: PropTypes.string,
     }
 
     const element = (
-      <>
+      <div className="container">
         <Message greeting="Hello" subject="JSX" />
         <Message greeting="Goodbye" subject="JSX" />
-      </>
+      </div>
     )
 
     ReactDOM.createRoot(document.getElementById('root')).render(element)

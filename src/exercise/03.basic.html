@@ -7,13 +7,11 @@
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
-  <!-- EXTRA CREDIT - 2 -->
-
   <script type="text/babel">
-    const className = 'container'
-    const children = 'Hello from props'
-    const props = {children, className}
-    const element = <div {...props} />
+    const element = <div className="container">Hello JSX!</div>
+
+    // 📜  Learn the differences between JSX and HTML syntax from the React docs here:
+    // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
     ReactDOM.createRoot(document.getElementById('root')).render(element)
   </script>
